@@ -1,8 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getMovies } from "../actions";
+import styled from "styled-components";
 
-const MissionForm = props => {
+const Button = styled.button`
+    border: none;
+    cursor: pointer;
+    padding: 11px 10px;
+    &:hover {
+        background-color:  #304795;
+        color: #fff;
+    }
+`
+
+const MovieForm = props => {
     const handleGetMovies = event => {
         event.preventDefault();
         props.getMovies();
@@ -12,7 +23,7 @@ const MissionForm = props => {
             {props.isFetchingData ? (
                 <p>*fetching movies*</p>
             ) : (
-                    <button onClick={handleGetMovies}>get movies</button>
+                    <Button className="fetch-movies" onClick={handleGetMovies}>get movies</Button>
                 )}
         </div >
     )
@@ -24,4 +35,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getMovies })(MissionForm);
+export default connect(mapStateToProps, { getMovies })(MovieForm);
