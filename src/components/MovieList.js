@@ -6,14 +6,19 @@ import Movie from "./Movie";
 const MovieList = props => {
     return (
         <div>
-            {props.movies.map(movie => <Movie movie={movie} />)}
+            {props.error ? (
+                <div className="error">{props.error}</div>
+            ) : (
+                    props.movies.map(movie => <Movie key={movie.id} movie={movie} />)
+                )}
         </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        movies: state.movies
+        movies: state.movies,
+        error: state.error
     }
 }
 

@@ -2,3 +2,14 @@
   text-align: center;
 }
 
+.error {
+  color: red;
+  font-size: 3rem;
+  animation: blink 0.5s linear infinite ;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

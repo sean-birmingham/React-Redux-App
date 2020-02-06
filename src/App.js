@@ -1,6 +1,7 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
 import './App.css';
 
@@ -9,7 +10,7 @@ import MovieList from './components/MovieList';
 
 import { movieReducer as reducer } from './reducers/movieReducer';
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 function App() {
   return (
