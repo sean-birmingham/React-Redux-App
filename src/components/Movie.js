@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = styled.div`
+export const Card = styled.div`
     background-color: #DCEDFF;
     color: #000;
     margin: 10px auto;

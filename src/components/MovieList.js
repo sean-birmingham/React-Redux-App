@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Movie from "./Movie";
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-flow: row wrap;
 `

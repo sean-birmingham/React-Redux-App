@@ -7,8 +7,10 @@ import './App.css';
 
 import MovieForm from './components/MovieForm';
 import MovieList from './components/MovieList';
+import CharacterList from './components/CharacterList';
 
 import { movieReducer as reducer } from './reducers/movieReducer';
+
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -19,6 +21,7 @@ function App() {
         <h1>Studio Ghibli Films</h1>
         <MovieForm />
         <MovieList />
+        <CharacterList />
       </div>
     </Provider>
   );
